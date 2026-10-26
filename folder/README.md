@@ -1,8 +1,8 @@
 # Web Extension Blueprint
 
-A docs-first workflow for designing, building, integrating and releasing browser extensions with Claude Code. Seven skills and the rules they follow take a product from its requirements to a designed, built, tested, integrated and store-published extension for Chrome, Edge and Firefox (and Safari where the product wants it) — and every screen traces back to a reviewed document and an approved design.
+Design, build and release a product's browser extension for Chrome, Edge and Firefox with Claude Code, connected to the real backend. Every surface — the popup, the side panel, full pages and the UI it adds to other sites — follows one design system; each part is designed for your approval, built and tested on realistic mock data, then connected to the backend's real endpoints. Releases go through the browser stores, with Safari as an option. Seven skills and the rules behind them, for WXT · React · TypeScript · Manifest V3 · Tailwind CSS · shadcn/ui · TanStack Query.
 
-It is a frontend half of a pair. The **Backend Blueprint** writes the product docs this one reads (feature areas, business rules, app flows, api-docs) and reads the screen specs this one writes. The stack is **WXT · React · TypeScript · Manifest V3 · Tailwind CSS · shadcn/ui · TanStack Query**, published through the browser stores.
+It works with the **Backend Blueprint**: it reads the backend's product docs and API docs, and sends back screen specs and issues.
 
 ---
 
