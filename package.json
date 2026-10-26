@@ -1,6 +1,6 @@
 {
   "name": "web-extension-blueprint",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "Design-to-store web extension workflow for Claude Code — the docs come first, the design system governs every surface, the backend's api-docs drive integration, and releases go through the browser stores.",
   "type": "module",

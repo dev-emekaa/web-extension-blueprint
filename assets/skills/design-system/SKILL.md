@@ -20,6 +20,7 @@ Read these first; ask for anything missing.
 | Business rules and app flows, `docs/business-rules/`, `docs/app-flows/` | The states screens need (pending, failed, expired), the data types that recur (money, dates, statuses), the roles and how different their worlds are |
 | `CLAUDE.md` | The audience this repo serves, whether a second audience shares the brand, the browsers, the surfaces the product has, the single purpose, and the target sites whose pages the content UI must sit on |
 | Brand assets, if any | The logo system from the Ideas Blueprint, brand colors, a name, a tagline. The logo's color and geometry are inputs to the palette and shape language, not the other way round |
+| My screenshots in `docs/design/references/`, if any | Screens I picked from products I admire — the most direct statement of what I want. Optional; never committed |
 | Another client's `DESIGN.md` for the same product, if one exists (at the sibling client repo path in `CLAUDE.md`) | The brand decisions — palette, type, voice, shape — are taken from it so the product looks like itself on every client; the extension's surfaces, content UI and motion are this system's own |
 | An existing `DESIGN.md` | In a later phase: extend it, never regenerate it |
 
@@ -42,13 +43,18 @@ Before any color is picked, write down, in a few lines each:
 
 The goal is to learn what the best products in this space do well and why, then do it our own way. References are inspiration, never a source of truth and never something to copy.
 
-**On Mobbin** (through its MCP, `platform: web` — extensions are catalogued with the web, and the best web products' compact components are the closest relatives of a popup and a side panel — plus the Chrome Web Store's and Firefox's design guidance for the chrome; follow the Mobbin search skill if it is installed):
+**Choose them:** **three to five direct competitors or neighbours** named in the brief, and **two or three category leaders** whose interface is widely admired, in the product's category or a close one (a dense tool learns from the best dense tools, whatever their domain). For each, look at the actual screens — the images, not the metadata — of the surfaces this product will have: the popup's first screen, the side panel's main list and detail, a form, the options page, the content UI on a real page (how it anchors, how it stays out of the way), an empty state, the signed-out and permission-needed states.
 
-1. Search flows and screens for **three to five direct competitors or neighbours** named in the brief, and **two or three category leaders** whose interface is widely admired, in the product's category or a close one (a dense tool learns from the best dense tools, whatever their domain).
-2. For each, look at the actual screens — the images, not the metadata — of the surfaces this product will have: the popup's first screen, the side panel's main list and detail, a form, the options page, the content UI on a real page (how it anchors, how it stays out of the way), an empty state, the signed-out and permission-needed states.
-3. Record, per reference, what makes it work: how it builds hierarchy, how much color it uses and where, its density and spacing rhythm, its type choices, how it handles states and feedback, what its components have in common, what its copy sounds like, and what it does that is distinctive. Also what it does badly, so we avoid it.
+**Where to see them** is set by the `Design references` row of `CLAUDE.md` (called `Design reference library` in projects set up before it; rename it when you meet it). If Mobbin isn't connected and the row doesn't say what to use instead, ask me once — web research, my screenshots, or both — and record the answer in the row; if I'm not there to answer, record and use web research plus any screenshots in the folder. A missing library never stops the work. Use what the row allows, in this order:
 
-**Outside Mobbin**, where it helps: the products' own marketing sites. Where the direction draws on a product documented in the corpus at `github.com/VoltAgent/awesome-design-md`, that product's DESIGN.md shows its exact decisions; learn from it, never copy. Cite everything you looked at.
+1. **My screenshots**, if `docs/design/references/` holds any. They are optional: screens I picked from products I admire, so they say most directly what I want. Look at every one. The folder is never committed — confirm `.gitignore` lists `docs/design/references/` and add it if not — because the images are other companies' and may show personal data; the docs record what each one taught and its file name, never the image.
+2. **Mobbin**, when connected (through its MCP, `platform: web` — extensions are catalogued with the web, and the best web products' compact components are the closest relatives of a popup and a side panel; follow the Mobbin search skill if it is installed).
+3. **Web research**, when Mobbin isn't connected or leaves a gap: the chosen products' Chrome Web Store, Firefox Add-ons and Edge Add-ons listings (and the Mac App Store where a Safari version ships), whose screenshots show the real popup, side panel and content UI, and their own sites and help-center articles, opened in a browser so you see the screens themselves, not marketing illustrations.
+4. **None of these available:** build the direction from the brief and the Chrome Web Store's and Firefox's design guidance, and say so in the report.
+
+Whatever the source, read the Chrome Web Store's and Firefox's design guidance for the chrome.
+
+**Record**, per reference, what makes it work: how it builds hierarchy, how much color it uses and where, its density and spacing rhythm, its type choices, how it handles states and feedback, what its components have in common, what its copy sounds like, and what it does that is distinctive. Also what it does badly, so we avoid it. Where the direction draws on a product documented in the corpus at `github.com/VoltAgent/awesome-design-md`, that product's DESIGN.md shows its exact decisions; learn from it, never copy. Cite everything you looked at — its link, or the screenshot's file name.
 
 **Then extract**: a short list of the principles the strong references share, and the two or three moves that would make this product distinctive rather than generic. That list is what the system is built from.
 
