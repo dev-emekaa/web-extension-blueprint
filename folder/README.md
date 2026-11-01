@@ -1,6 +1,6 @@
 # Web Extension Blueprint
 
-Design, build and release a product's browser extension for Chrome, Edge and Firefox with Claude Code, connected to the real backend. Every surface — the popup, the side panel, full pages and the UI it adds to other sites — follows one design system; each part is designed for your approval, built and tested on realistic mock data, then connected to the backend's real endpoints. Releases go through the browser stores, with Safari as an option. Seven skills and the rules behind them, for WXT · React · TypeScript · Manifest V3 · Tailwind CSS · shadcn/ui · TanStack Query.
+Design, build and release a product's browser extension for Chrome, Edge and Firefox with Claude Code, connected to the real backend. Every surface — the popup, the side panel, full pages and the UI it adds to other sites — follows one design system; each part is designed for your approval, built and tested on realistic mock data, then connected to the backend's real endpoints. Releases go through the browser stores, with Safari as an option. Eight skills and the rules behind them, for WXT · React · TypeScript · Manifest V3 · Tailwind CSS · shadcn/ui · TanStack Query.
 
 It works with the **Backend Blueprint**: it reads the backend's product docs and API docs, and sends back screen specs and issues.
 
@@ -10,7 +10,7 @@ It works with the **Backend Blueprint**: it reads the backend's product docs and
 
 ```
 web-extension-blueprint/
-  skills/                7 skills, one folder each
+  skills/                8 skills, one folder each
   rules/                 the rules every project uses, plus one optional
   templates/
     CLAUDE.md            the blocks to add to your project's CLAUDE.md
@@ -33,7 +33,7 @@ Then:
 
 1. **Remove the optional rule if you don't need it:** `analytics.md` — keep it only if the product tracks user behaviour with PostHog.
 2. **Add the CLAUDE.md blocks.** Paste `templates/CLAUDE.md` into your project's `CLAUDE.md` (create the file if there is none). Fill in the audiences and the project configuration now — the backend repo path, the single purpose and the target sites above all — or leave them; each skill asks for anything missing, once.
-3. **Check it worked.** Start Claude Code and run `/context` — the rules appear under Memory files (`ci-cd.md` only once a deploy file is touched). Type `/` and the seven skills are listed.
+3. **Check it worked.** Start Claude Code and run `/context` — the rules appear under Memory files (`ci-cd.md` only once a deploy file is touched). Type `/` and the eight skills are listed.
 
 > `.claude` is a hidden folder. To see it in Finder, press **Cmd + Shift + .**
 
@@ -59,6 +59,10 @@ Then:
 3. `/extension-integrate` — one feature per session, or the whole phase.
 4. `/extension-release` — a new version through the stores.
 
+**Taking over an existing extension**
+
+`/extension-adopt` — once, after the backend has been adopted: documents the code the way these skills expect, with every fact citing its source, checks the backend contract, and lists where it departs from the rules; `/extension-setup` then fills the foundation it says is missing. Then the project is run like any other.
+
 **Fixing an issue, or adopting a backend change**
 
 `/extension-issue-fix` — reproduces in the browser it was reported in and then the others, classifies (including a target site that changed its markup), writes the failing test, fixes surgically, updates the docs and disclosures, verifies, says whether the fix rides the next release or goes out as a hotfix, and delivers a PR.
@@ -78,6 +82,8 @@ Then:
 **`/extension-issue-fix`** — Resolves anything in what already exists: bugs, errors in any context, browser defects, a target site that changed its markup, design drift, accessibility or performance problems, store-review findings, change requests, and the changes a backend handoff requires. Failing test first, surgical fix, docs and disclosures updated, flows verified in every browser, and a clear answer on how the fix ships — the next release, or a hotfix from the live tag — with any permission change flagged as a release decision.
 
 **`/extension-release`** — Takes a release from "what should ship" to "live for users": the release decided on the tracker with every manifest change called out, the version bumped by PR, release notes and the listing, permission justifications, privacy disclosures and screenshots brought up to date with the code, the production pipeline that smoke-tests and submits to the Chrome Web Store, Firefox Add-ons and Edge Add-ons, a check of the build in real browsers on the real target sites, each store's review followed and its findings classified, a Chrome rollout raised step by step while the crash-free rate holds and halted when it does not, and a record of every release. Covers the first release too, and the optional Safari build.
+
+**`/extension-adopt`** — Brings an existing extension under the blueprint, once, after the backend: inventories the code, says whether its stack fits, reconstructs the tracker, `DESIGN.md` and the screen specs with citations, and lists deviations as issues or a proposed phase. Changes no application code.
 
 **`/screen-specs`** — What each screen sends to the backend and shows from it, written from the built screens. The same skill the Backend Blueprint ships.
 
