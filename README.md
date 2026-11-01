@@ -50,7 +50,7 @@ docs/
 3. Run `/design-system` once the PRD and feature areas are in.
 4. Run `/extension-build` for the first feature area.
 
-**Already have an extension?** Run `/extension-adopt` instead of steps 3 and 4, once the backend has been adopted. It documents the existing code the way these skills expect and lists where it departs from the rules; `/extension-setup` then fills whatever foundation the report says is missing.
+**Already have an extension?** Run `/extension-adopt` instead of steps 2 to 4, once the backend has been adopted or built with the Backend Blueprint. It documents the existing code the way these skills expect and lists where it departs from the rules; `/extension-setup` then fills whatever foundation the report says is missing.
 
 Commit `.claude/` with your project: cloud sessions and scheduled runs only read project skills. `--personal` is for throwaway work.
 
