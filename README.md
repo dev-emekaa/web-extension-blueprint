@@ -62,7 +62,7 @@ npx github:dev-emekaa/web-extension-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.1.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -108,7 +108,7 @@ How everything looks, moves and reads — in a small popup, a side panel, and on
 **Writes** `DESIGN.md`
 
 ### `/extension-build`
-Designs and builds one feature area's screens: lists every screen its flows need, on which surface, with its states — signed out, permission needed, nothing found on the page — and any permission it would add; designs them for your approval, then builds them for every browser on realistic mock data with images and tests, saves copies of the target sites' pages to test against, checks every flow on the real sites, and writes the screen specs the backend builds from.
+Designs and builds one feature area's screens: lists every screen its flows need, on which surface, with its states — signed out, permission needed, nothing found on the page — and any permission it would add; designs them for your approval, or reviews the ones a designer supplies, then builds them for every browser on realistic mock data with images and tests, saves copies of the target sites' pages to test against, checks every flow on the real sites, and writes the screen specs the backend builds from.
 **Writes** the designs, screens, mocks, test pages, tests and screen specs
 
 ### `/extension-integrate`
@@ -184,6 +184,7 @@ The zip appears under the release's **Assets** as `web-extension-blueprint-v{ver
 
 - Node 22 or later, and Claude Code
 - For releases: a Chrome Web Store developer account, a Firefox Add-ons account and an Edge Partner Center account — `/extension-setup`'s guide walks through them. Safari also needs an Apple Developer Program membership and a Mac
+- Optional, when a designer makes the screens: Figma, connected through its MCP. Without it, `/extension-build` and `/design-system` read the designer's exports
 - Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/extension-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/extension-build` designs as HTML prototypes instead
 
