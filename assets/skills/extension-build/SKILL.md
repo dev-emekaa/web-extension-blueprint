@@ -1,6 +1,6 @@
 ---
 name: extension-build
-description: Design and build the extension's screens for one feature area (first phase) or one feature (later phases) — the screen inventory across the popup, side panel, pages and content UI, references, canvas designs for your approval, then the screens built for every target browser with realistic mock data through the real data layer, the content-script anchors and permissions they need, images, tests, and the screen specs handed to the backend. Use when turning a unit's business rules and app flows into designed and built UI, before its backend exists.
+description: Design and build the extension's screens for one feature area (first phase) or one feature (later phases) — the screen inventory across the popup, side panel, pages and content UI, references, canvas designs for your approval — or a designer's screens reviewed — then the screens built for every target browser with realistic mock data through the real data layer, the content-script anchors and permissions they need, images, tests, and the screen specs handed to the backend. Use when turning a unit's business rules and app flows into designed and built UI, before its backend exists.
 ---
 
 # Extension Build

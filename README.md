@@ -62,7 +62,7 @@ npx github:dev-emekaa/web-extension-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.1 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -77,16 +77,17 @@ From the backend: feature areas · business rules · app flows · (later) API do
  ├─ /design-system        DESIGN.md, once
  └─ /extension-build      per feature area, in order:
       first, once: which surfaces the extension uses, and their shells
-      design   every screen it needs, designed for your approval        → Designed
-      build    screens on mock data, in every browser, with tests       → Built
-               → /screen-specs, sent to the backend                     → Specced
+      design   every screen it needs, designed for your approval  → Designed
+               (or a designer's screens, reviewed)
+      build    screens on mock data, in every browser, with tests → Built
+               → /screen-specs, sent to the backend               → Specced
       ↓ once every area is Specced, the backend designs its database, then
         builds the areas in order, writing each one's API docs
-    /extension-integrate  real endpoints in place of the mocks          → Integrated
+    /extension-integrate  real endpoints in place of the mocks    → Integrated
     /extension-release    submitted to the stores, reviewed, rolled out
 
 /extension-issue-fix — any time, for anything already built
-/extension-adopt — once, to bring an existing app under the blueprint, after the backend
+/extension-adopt — once, to bring an existing extension under the blueprint, after the backend
 ```
 
 **Later phases** follow the backend's: the unit becomes a feature, and `/extension-build` reads the existing screens before designing new ones.
@@ -104,7 +105,7 @@ The foundation, once: the WXT project with a separate identity for development, 
 **Writes** the foundation, `docs/infra/infra-setup.md`
 
 ### `/design-system`
-How everything looks, moves and reads — in a small popup, a side panel, and on websites the product doesn't control: researches the best extensions in the product's category, proposes a direction for your approval, then writes `DESIGN.md` — colours, type, every component and its states, each surface's sizes, how its UI sits on any page without picking up that page's styles, keyboard shortcuts, motion, writing style and accessibility — and applies it to the code.
+How everything looks, moves and reads — in a small popup, a side panel, and on websites the product doesn't control: researches the best extensions in the product's category, proposes a direction for your approval — or, where a designer makes the screens, records their system — then writes `DESIGN.md` — colours, type, every component and its states, each surface's sizes, how its UI sits on any page without picking up that page's styles, keyboard shortcuts, motion, writing style and accessibility — and applies it to the code.
 **Writes** `DESIGN.md`
 
 ### `/extension-build`
@@ -184,7 +185,7 @@ The zip appears under the release's **Assets** as `web-extension-blueprint-v{ver
 
 - Node 22 or later, and Claude Code
 - For releases: a Chrome Web Store developer account, a Firefox Add-ons account and an Edge Partner Center account — `/extension-setup`'s guide walks through them. Safari also needs an Apple Developer Program membership and a Mac
-- Optional, when a designer makes the screens: Figma, connected through its MCP. Without it, `/extension-build` and `/design-system` read the designer's exports
+- Optional, when a designer makes the screens — say so in the `Designs` row of `CLAUDE.md`: Figma, connected through its MCP. Without it, `/extension-build` and `/design-system` read the designer's exports
 - Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/extension-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/extension-build` designs as HTML prototypes instead
 
