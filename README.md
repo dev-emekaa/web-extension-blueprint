@@ -62,7 +62,7 @@ npx github:dev-emekaa/web-extension-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.2 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.3 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -152,7 +152,15 @@ Loaded by Claude Code at the start of every session — except `ci-cd.md`, which
 
 ## Working with the backend
 
-- **Sharing docs:** `pnpm docs:pull` brings the backend's docs here; `pnpm docs:push` sends screen specs and backend issues there. `/extension-setup` installs both, reading the backend repo's path from `CLAUDE.md`.
+- **Sharing docs:** `/extension-setup` installs the docs sync, which copies files between this repo and the backend repo cloned on the same machine (its path in `CLAUDE.md`). The skills run it where they need it; run it yourself any time:
+
+  ```
+  pnpm docs:pull                 bring in the backend's latest docs
+  pnpm docs:push --specs {file}  send one screen-spec file to the backend
+  pnpm docs:push --handoff       send this client's backend-issues files
+  ```
+
+  `git pull` the backend repo before pulling, and commit what you push into it.
 - **Issues:** `/extension-integrate` logs what the backend must fix in `backend-issues-extension.md`; the backend's `/backend-issue-fix` fixes it and hands back a message that `/extension-issue-fix` adopts.
 - **The backend's side:** it must meet `security.md` → Backend contract — tokens, sign-in through the browser's own flow, the minimum-version check, account deletion, and real-time connections without cookies. Backend Blueprint v1.4.0 or later does.
 - **Before the first release:** install the Backend Blueprint with `--store-client` and set its `Client release status`. From then on it stops making changes that would break versions already installed.
