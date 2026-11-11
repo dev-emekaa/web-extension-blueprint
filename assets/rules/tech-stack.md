@@ -30,6 +30,7 @@ The extension is the client only. The backend (NestJS or FastAPI, built with the
 | Session | Access token in `storage.session`, refresh token in `storage.local`; the gateway refreshes (`security` → Tokens and sessions). No surface or content script ever holds a token |
 | Sign-in | `browser.identity.launchWebAuthFlow` to the backend's sign-in page with PKCE, returning through the browser's identity redirect URL · the email-and-password form in the popup, calling the backend through the gateway. On Safari, which has no `identity` API, provider sign-in is the email-and-password form or a tab opened on the backend's sign-in URL that redirects to an `https` page on the product's web domain, caught with `tabs.onUpdated` — decided in the setup plan when Safari is on. No embedded sign-in page, no provider SDK |
 | Forms · validation | React Hook Form · Zod, through `@hookform/resolvers` |
+| Image generation *(optional)* | `@google/genai` (Gemini, the default) or `openai`, a dev dependency used only by `scripts/image-generate.mjs`; its key in `.env.local` |
 | Environment | Build-time constants per environment through WXT's `.env.{mode}` files and `import.meta.env`, declared and validated with Zod in `src/shared/env.ts` |
 | Mocking | This extension's in-process mock handlers in the background for the build-before-integration phase (`coding-standards` → Mock mode) · the same handlers behind a messaging double in UI tests · MSW (`msw/node`) for the gateway's own tests |
 | Dates | `date-fns` |

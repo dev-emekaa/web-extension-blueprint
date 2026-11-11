@@ -62,7 +62,7 @@ npx github:dev-emekaa/web-extension-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.2.3 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.3.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -194,6 +194,7 @@ The zip appears under the release's **Assets** as `web-extension-blueprint-v{ver
 - Node 22 or later, and Claude Code
 - For releases: a Chrome Web Store developer account, a Firefox Add-ons account and an Edge Partner Center account — `/extension-setup`'s guide walks through them. Safari also needs an Apple Developer Program membership and a Mac
 - Optional, when a designer makes the screens — say so in the `Designs` row of `CLAUDE.md`: Figma, connected through its MCP. Without it, `/extension-build` and `/design-system` read the designer's exports
+- Optional, for generated images: a Gemini or OpenAI API key in `.env.local` (`/extension-setup` writes the script), or an image MCP you have configured. Without either, `/extension-build` writes each image's prompt into `docs/design/images.md` for you to generate
 - Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/extension-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/extension-build` designs as HTML prototypes instead
 
