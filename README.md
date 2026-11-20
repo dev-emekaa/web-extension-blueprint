@@ -63,7 +63,7 @@ npx github:dev-emekaa/web-extension-blueprint init --force
 
 - Skills, rules and the guide in `docs/blueprint/` are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.3.4 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/web-extension-blueprint#v1.3.5 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -118,7 +118,7 @@ Replaces the mocks with the real backend once its API docs land: checks the scre
 **Writes** the integration, the backend-issues file
 
 ### `/extension-issue-fix`
-Changes what already exists — including a target site changing its pages, or a store review finding: reproduces the issue in every browser, writes a failing test, fixes it, updates the docs it touched (including permission reasons and privacy disclosures), says whether the fix waits for the next release or goes out as a hotfix, flags any permission change, and adopts changes the backend hands over.
+Changes what already exists — the issues you give it and the ones logged in `docs/issues.md`, including a target site changing its pages or a store review finding: reproduces the issue in every browser, writes a failing test, fixes it, updates the docs it touched (including permission reasons and privacy disclosures), says whether the fix waits for the next release or goes out as a hotfix, flags any permission change, and adopts changes the backend hands over.
 **Writes** the fix, its tests and test pages, the docs it changes
 
 ### `/extension-release`
@@ -162,7 +162,7 @@ Loaded by Claude Code at the start of every session — except `ci-cd.md`, which
   ```
 
   `git pull` the backend repo before pulling, and commit what you push into it.
-- **Issues:** `/extension-integrate` logs what the backend must fix in `backend-issues-extension.md`; the backend's `/backend-issue-fix` fixes it and hands back a message that `/extension-issue-fix` adopts.
+- **Issues:** `/extension-integrate` logs what the backend must fix in `backend-issues-extension.md`; the backend's `/backend-issue-fix` fixes it and hands back a message that `/extension-issue-fix` adopts. What this extension must fix itself, when it isn't fixed on the spot, goes in `docs/issues.md` for `/extension-issue-fix`.
 - **The backend's side:** it must meet `security.md` → Backend contract — tokens, sign-in through the browser's own flow, the minimum-version check, account deletion, and real-time connections without cookies. Backend Blueprint v1.4.0 or later does.
 - **Before the first release:** install the Backend Blueprint with `--store-client` and set its `Client release status`. From then on it stops making changes that would break versions already installed.
 - **Another client for the same product:** each client repo is separate. `/design-system` takes the brand from the first client's `DESIGN.md`, so the product looks like itself everywhere.

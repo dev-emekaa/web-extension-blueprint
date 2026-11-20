@@ -79,6 +79,7 @@ What may be stored where, and for how long.
 - **New dependencies wait:** pnpm's `minimumReleaseAge` is set to seven days in `pnpm-workspace.yaml`, so a package version published an hour ago cannot be installed, which blocks most hijacked releases. Every dependency ships to users as part of a package the stores review; a compromised one is a compromised extension.
 - **`pnpm audit` runs in CI**; a high or critical finding blocks the merge unless the PR records why it does not apply.
 - **CI workflows pin actions to a commit SHA**, give each job the least token permission, and expose store credentials only to the production deploy job on `main` and `hotfix/*`.
+- **Dependabot or Renovate** opens one grouped PR per ecosystem for the week's minor and patch updates and one PR per major — a breaking change is reviewed alone, never skipped — all through the same checks as any other.
 - **Secret scanning with push protection** is on for the repository.
 
 ## Secrets and environment

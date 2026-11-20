@@ -146,17 +146,17 @@ Follow `testing`.
 
 - **Integration tests** run against the messaging double, answering the integrated endpoints from the updated fixtures — now in the api-docs' shapes — through per-test overrides, covering each screen's states including the error responses the api-docs define.
 - **Unit tests** for any schema or formatter that changed.
-- **E2E**: the unit's primary Playwright journey now runs on the staging build against the real backend with the seeded users; the api-testing guide's variables tell you which users and records exist.
+- **E2E**: the unit's primary Playwright journey now runs on the staging build against the real backend with the seeded users; `docs/seed.md` tells you which users and records exist.
 - Run every suite, including earlier units'. All green before Step 7.
 
 ### Step 7 — Verify against staging
 
 Do not make me test what Playwright can reach: Chromium is yours to walk. Firefox and the real target sites are the one part that is mine — give me the checklist for those and I report.
 
-1. Ask the backend to reseed staging (or fire the reseed endpoint from the api-testing guide if I say so), and run the extension in **direct** mode against the staging API (`pnpm dev:staging`). The mode is one global switch, so walk this unit's flows in direct mode and stop where a flow crosses into an un-integrated unit's screens or a retained cross-unit mock; walk those crossings in a second pass in mock mode, whose passthrough still sends this unit's calls to the real backend.
+1. Ask the backend to reseed staging (or fire the reseed endpoint `docs/seed.md` names if I say so), and run the extension in **direct** mode against the staging API (`pnpm dev:staging`). The mode is one global switch, so walk this unit's flows in direct mode and stop where a flow crosses into an un-integrated unit's screens or a retained cross-unit mock; walk those crossings in a second pass in mock mode, whose passthrough still sends this unit's calls to the real backend.
 2. Walk every flow of the unit in the built extension (driving it with Playwright against the `chrome-mv3` build and capturing screenshots of each surface and of content UI on its fixture page; Firefox and the real target sites from my report, marked as such), signed in as each role the flows name, happy paths and the error paths the rules define, plus the background behaviours the api-docs describe (what the UI shows after a job runs, what a real-time event updates), and the network cut mid-flow for the offline states.
 3. **Present the walk in the chat, flow by flow:** each screen, each browser, the calls it made (method and path, tokens shortened), what the UI showed, and whether it matched the flow and the design. End with everything that failed.
-4. For each failure: client-side → state the fix and **wait for my approval** before implementing; backend-side → Step 5.
+4. For each failure: client-side → state the fix and **wait for my approval** before implementing, or log it in `docs/issues.md` if I defer it; backend-side → Step 5.
 
 ### Step 8 — Update the tracker and report
 
@@ -166,7 +166,7 @@ Do not make me test what Playwright can reach: Chromium is yours to walk. Firefo
   - **Endpoints integrated**, grouped by screen; cross-unit endpoints marked.
   - **Mocks remaining**, each with the reason.
   - **Gaps A and B**, and orphan endpoints flagged.
-  - **Backend issues logged**, with their status.
+  - **Backend issues logged**, with their status, and any client-side failure deferred to `docs/issues.md`.
   - **Tests** — counts per layer, and that earlier units' suites pass.
   - **Verification** — the staging walk passed, with what it caught; **the backend commit verified** (from the backend's health endpoint), which is the backend's production sign-off for this unit.
 - **Deliver it as a PR.** Branch off `origin/main`, push, give me the link. Never create the PR yourself. Merging deploys to staging — the staging builds as artifacts and the signed Firefox build — where the unit now runs against the real backend.

@@ -93,7 +93,7 @@ Wired once, used by the builds:
 
 - **The three GitHub Actions workflows `ci-cd` defines:** PR checks (three type-check projects, lint, tests, every target built with the manifest assertion script, `web-ext lint`, the `e2e` label path), the staging deploy with the staging builds, the unlisted Firefox signing with the sources zip, the artifacts, the `staging-current` tag, the Playwright run and the source-map upload, the `hotfix/*` triggers, and the production deploy with its release-owner check, SHA-only `commit` input, version check against the last `v*` tag, the smoke run, the `wxt submit` step per store with the sources zip for Firefox, the source-map upload and the `v*` tag.
 - **The manifest assertion script** `ci-cd` names, reading each built manifest and comparing permissions, hosts, CSP, ids and `data_collection_permissions` against the environment's expectations.
-- **Dependabot or Renovate** configuration, and the security policies `security` → Updates and supply chain requires. Check WXT's and `wxt submit`'s current documentation for the zip and submit options; they change.
+- **Dependabot or Renovate** configuration — weekly, one grouped PR per ecosystem for minor and patch updates and one PR per major, across packages and GitHub Actions — and the security policies `security` → Updates and supply chain requires. Check WXT's and `wxt submit`'s current documentation for the zip and submit options; they change.
 
 ## Step 10 — Docs sync with the backend
 
